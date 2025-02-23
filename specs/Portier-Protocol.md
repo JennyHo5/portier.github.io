@@ -10,9 +10,9 @@ the same, differing only in trust. An RP is _configured_ to trust a specific
 Broker, whereas a Broker performs _run-time checks_ to verify trust in an IdP.
 
 The protocol described here is based on a strict subset of the OAuth2, OpenID
-Connect and JSON Web Token protocols, with some Portier-specific extensions
-added. This document will however avoid referencing the specifications of these
-underlying protocols, and instead describe each step here.
+Connect and JSON Web Token protocols, with some optional Portier-specific
+extensions. This document will however avoid referencing the specifications of
+these underlying protocols, and instead describe each step here.
 
 This document _does_ assume familiarity with lower-level protocols such
 as [HTTPS] and [JSON].
@@ -40,7 +40,7 @@ document, it is applied as follows:
   Server for _any_ email address.
 
 - A Broker Client finds IdP Servers through a discovery mechanism based on the
-  email address. In this scenario, the Client initially signed tokens from the
+  email address. In this scenario, the Client trusts signed tokens from the
   Server for _only_ the email address it was discovered through.
 
 These rules are reflected in the steps below.
